@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartStudy | Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <h2 class="logo">SmartStudy</h2>
+
+            <nav>
+                <a href="#dashboard" class="active">Dashboard</a>
+                <a href="#subjects-section">My Subjects</a>
+                <a href="#tasks-section">My Tasks</a>
+                <a href="#revision-section">Revision Tracker</a>
+                <a href="#progress-section">Progress Report</a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <p>Stay focused. Keep growing.</p>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Dashboard -->
+        <main class="main-content" id="dashboard">
+
+            <header class="topbar">
+                <div>
+                    <h1 id="greeting">Good Morning!</h1>
+                    <p>Let's make today productive.</p>
+                </div>
+
+                <div class="profile">
+                    <span id="currentDate">Loading date...</span>
+                </div>
+            </header>
+
+
+            <!-- Welcome Section -->
+            <section class="welcome-card">
+                <h2>Welcome to SmartStudy!</h2>
+                <p>Plan smarter, study better and track your academic progress.</p>
+            </section>
+
+
+            <!-- Statistics -->
+            <section class="stats">
+
+                <div class="stat-card">
+                    <h3>Total Subjects</h3>
+                    <p>0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Total Tasks</h3>
+                    <p>0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Completed Tasks</h3>
+                    <p>0</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3>Pending Tasks</h3>
+                    <p>0</p>
+                </div>
+
+            </section>
+
+
+            <!-- My Subjects Section -->
+<section class="subjects-section" id="subjects-section">
+
+    <h2>My Subjects</h2>
+
+    <form id="subjectForm" class="subject-form">
+
+        <div class="form-group">
+            <label for="subjectName">Subject Name</label>
+            <input
+                type="text"
+                id="subjectName"
+                placeholder="e.g. Python Programming"
+                required
+            >
+        </div>
+
+        <button type="submit" class="add-task-btn">
+            + Add Subject
+        </button>
+
+    </form>
+
+    <div id="subjectList" class="subject-list">
+        <p>No subjects added yet.</p>
+    </div>
+
+</section>
+            <!-- Tasks Section --><!-- Revision Tracker Section -->
+
+<section class="revision-section" id="revision-section">
+
+    <h2>Revision Tracker</h2>
+
+    <form id="revisionForm" class="revision-form">
+
+        <div class="form-group">
+            <label for="revisionSubject">Subject</label>
+
+            <input
+                type="text"
+                id="revisionSubject"
+                placeholder="e.g. Python"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="revisionTopic">Topic Name</label>
+
+            <input
+                type="text"
+                id="revisionTopic"
+                placeholder="e.g. Functions"
+                required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="revisionDate">Revision Date</label>
+
+            <input
+                type="date"
+                id="revisionDate"
+                required
+            >
+        </div>
+
+        <button type="submit" class="add-task-btn">
+            + Add Revision
+        </button>
+
+    </form>
+
+    <div id="revisionList" class="revision-list">
+
+        <p>No revision topics added yet.</p>
+
+    </div>
+
+</section>
+           <!-- Progress Report Section -->
+<section class="progress-section" id="progress-section">
+
+    <h2>Progress Report</h2>
+
+    <div class="report-stats">
+
+        <div class="stat-card">
+            <h3>Total Subjects</h3>
+            <p id="reportSubjects">0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Total Study Tasks</h3>
+            <p id="reportTasks">0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Completed Tasks</h3>
+            <p id="reportCompleted">0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Pending Tasks</h3>
+            <p id="reportPending">0</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>Completed Revisions</h3>
+            <p id="reportRevisions">0</p>
+        </div>
+
+    </div>
+
+    <h3>Task Completion</h3>
+
+    <div class="progress-bar">
+        <div id="progressBarFill" class="progress-bar-fill"></div>
+    </div>
+
+    <p>Completion: <span id="completionPercentage">0%</span></p>
+
+</section>
+<!-- Add Study Task Section -->
+<section class="tasks-section" id="tasks-section">
+
+    <h2>Add a New Study Task</h2>
+
+    <form id="taskForm" class="task-form">
+
+        <div class="form-group">
+            <label for="taskTitle">Task Name</label>
+            <input type="text" id="taskTitle"
+                placeholder="e.g. Complete Python assignment" required>
+        </div>
+
+        <div class="form-group">
+            <label for="taskSubject">Subject</label>
+            <input type="text" id="taskSubject"
+                placeholder="e.g. Python" required>
+        </div>
+
+        <div class="form-group">
+            <label for="taskDate">Due Date</label>
+            <input type="date" id="taskDate" required>
+        </div>
+
+        <div class="form-group">
+            <label for="taskPriority">Priority</label>
+            <select id="taskPriority" required>
+                <option value="">Select Priority</option>
+                <option value="High">High</option>
+                <option value="Medium">Medium</option>
+                <option value="Low">Low</option>
+            </select>
+        </div>
+
+        <button type="submit" class="add-task-btn">
+            + Add Task
+        </button>
+
+    </form>
+
+    <h2>Upcoming Tasks</h2>
+
+    <div id="taskList" class="task-list">
+        <p>No tasks added yet.</p>
+    </div>
+
+</section> 
+
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
